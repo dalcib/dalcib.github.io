@@ -34,6 +34,14 @@
         margin-right: auto;
         font-weight:bold;
       }
+      
+      input[type=number]::-webkit-inner-spin-button, 
+      input[type=number]::-webkit-outer-spin-button { 
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          margin: 0; 
+      }
 
     </style>
     <script src="angular.min.js"></script>
@@ -144,7 +152,7 @@
   <body ng-controller="NumberCtrl as number">
     <div class="center">
       <form name="test" class="css-form">
-        <span class="num">{{number.num1}} x {{number.num2}} = </span><input class="inputNum"  ng-model="number.result" autofocus ng-keyup="event=$event" ng-change=""></span>
+        <span class="num">{{number.num1}} x {{number.num2}} = </span><input class="inputNum" type="number" ng-model="number.result" autofocus ng-keyup="event=$event" ng-change=""></span>
       </form>
       <h2 class="clock"><timer autostart="false"  interval="100">{{mminutes}}:{{sseconds}}.{{millis-(seconds*1000)-(minutes*60000)}}</timer><h2>
       <button ng-click="number.start()"  >Start</button>&nbsp;&nbsp;<button ng-click="number.stop()"  >Stop</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
