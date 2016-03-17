@@ -9,29 +9,22 @@
     <!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">-->
     <style>
       .num {
-        //text-decoration:underline;
-        font-size:8em;
+        font-size:6em;
         text-align: center;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-weight:bold;
       }
       .clock {
-        //text-decoration:underline;
-        font-size:5em;
+        font-size:3em;
         text-align: center;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       }
       .inputNum {
-        font-size:8em;
+        font-size:6em;
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         width: 180px;
         text-align:right;
         font-weight:bold;
-      }
-
-      .css-form input.ng-invalid.ng-dirty {
-        //background-color: #FA787E;
-        border:1px solid #f00;
       }
 
       .center {
@@ -42,9 +35,6 @@
         font-weight:bold;
       }
 
-      .css-form input.ng-valid.ng-dirty {
-        //background-color: #78FA89;
-      }
     </style>
     <script src="angular.min.js"></script>
     <script src="angular-timer.js"></script>
@@ -152,10 +142,9 @@
     </script>
   </head>
   <body ng-controller="NumberCtrl as number">
-    <br><br>
     <div class="center">
       <form name="test" class="css-form">
-        <span class="num">{{number.num1}} x {{number.num2}} = </span><input class="inputNum" type="number" ng-model="number.result" autofocus ng-keyup="event=$event" ng-change=""></span>
+        <span class="num">{{number.num1}} x {{number.num2}} = </span><input class="inputNum"  ng-model="number.result" autofocus ng-keyup="event=$event" ng-change=""></span>
       </form>
       <h2 class="clock"><timer autostart="false"  interval="100">{{mminutes}}:{{sseconds}}.{{millis-(seconds*1000)-(minutes*60000)}}</timer><h2>
       <button ng-click="number.start()"  >Start</button>&nbsp;&nbsp;<button ng-click="number.stop()"  >Stop</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
